@@ -27,7 +27,16 @@ namespace MoonPdf
 
 		public MainWindowDataContext(MainWindow wnd)
 		{
-			this.Commands = new Commands(wnd);
+			this.Commands = new Commands(wnd, this);
 		}
+
+		private byte[] _data;
+
+		public byte[] Data
+		{
+			get { return _data; }
+			set { _data = value; }
+		}
+
 	}
 }

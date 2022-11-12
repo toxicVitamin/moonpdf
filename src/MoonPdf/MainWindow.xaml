@@ -3,6 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mpp="clr-namespace:MoonPdfLib;assembly=MoonPdfLib"
         xmlns:mpd="clr-namespace:MoonPdf"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:vm="clr-namespace:MoonPdf"
+        mc:Ignorable="d" d:DataContext="{d:DesignInstance Type=vm:MainWindowDataContext}"
         Title="MainWindow" WindowStartupLocation="CenterScreen" Height="768" Width="640" UseLayoutRounding="True" MinHeight="350" MinWidth="450">
     <DockPanel LastChildFill="True" UseLayoutRounding="True">
         <Menu x:Name="mainMenu" IsMainMenu="True" DockPanel.Dock="Top">
@@ -43,6 +47,13 @@
                 <MenuItem Header="{Binding Commands.ShowAboutCommand.Name}" Command="{Binding Commands.ShowAboutCommand}"/>
             </MenuItem>
         </Menu>
-        <mpp:MoonPdfPanel Background="LightGray" ViewType="SinglePage" PageRowDisplay="ContinuousPageRows" PageMargin="0,2,4,2" AllowDrop="True" x:Name="moonPdfPanel" x:FieldModifier="private"/>
+        <mpp:MoonPdfPanel 
+            Background="LightGray"
+            ViewType="SinglePage" 
+            PageMargin="0,2,4,2"
+            AllowDrop="True"
+            x:Name="moonPdfPanel" 
+            Source="{Binding  Data}"
+            x:FieldModifier="private"/>
     </DockPanel>
 </Window>

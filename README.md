@@ -8,7 +8,7 @@ An example for the inclusion is the MoonPdf app (see excerpt below)
 ```xml
 <Window xmlns:mpp="clr-namespace:MoonPdfLib;assembly=MoonPdfLib" ...>
   <mpp:MoonPdfPanel
-                    Source={Binding VieModelByteArray}
+                    Source={Binding ViewModelByteArray}
                     Background="LightGray" 
                     ViewType="SinglePage"
                     PageDisplay="ContinuousPages" 
